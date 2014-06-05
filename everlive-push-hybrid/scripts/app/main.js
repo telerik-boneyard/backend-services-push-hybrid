@@ -96,7 +96,7 @@ var app = (function () {
                     function(initResult) {
                         $("#tokenLink").attr('href', 'mailto:test@example.com?subject=Push Token&body=' + initResult.token);
                         $("#messageParagraph").html(successText + "Checking registration status...");
-                        alert();
+                        
                         return currentDevice.getRegistration();
                     },
                     function(err) {
