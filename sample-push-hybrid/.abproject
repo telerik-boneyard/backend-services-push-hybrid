@@ -56,5 +56,6 @@
   "Framework": "Cordova",
   "DisplayName": "",
   "Author": "",
-  "Description": "sample-push-hybrid"
+  "Description": "sample-push-hybrid",
+  "Framework": "Cordova"
 }
