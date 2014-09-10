@@ -27,6 +27,7 @@ var app = (function () {
             $("#messageParagraph").html("Missing Android Project Number!<br /><br />It appears that you have not filled in your Android project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Android project number at the beginning of the file.");
             $("#initializeButton").hide();
         }
+        navigator.splashscreen.hide();
     };
 
     document.addEventListener("deviceready", onDeviceReady, false);
