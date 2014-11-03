@@ -19,10 +19,10 @@ var app = (function () {
     var onDeviceReady = function() {
         if (!everliveApiKey || everliveApiKey == 'EVERLIVE_API_KEY') {
             $("#messageParagraph").html("Missing API key!<br /><br />It appears that you have not filled in your Everlive API key.<br/><br/>Please go to scripts/app/main.js and enter your Everlive API key at the beginning of the file.");
-            $("#initializeButton").hide();
+            $("#registerButton").hide();
         } else if ((!androidProjectNumber || androidProjectNumber == 'GOOGLE_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
             $("#messageParagraph").html("Missing Android Project Number!<br /><br />It appears that you have not filled in your Android project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Android project number at the beginning of the file.");
-            $("#initializeButton").hide();
+            $("#registerButton").hide();
         }
     };
 
@@ -38,24 +38,18 @@ var app = (function () {
     //Login view model
     var mainViewModel = (function () {
         
-        var successText = "SUCCESS!<br /><br />The device has been initialized for push notifications.<br /><br />";
+        var successText = "SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />";
         
         var _onDeviceIsRegistered = function() {
-            $("#initializeButton").hide();
             $("#registerButton").hide();
             $("#unregisterButton").show();
+            $("#messageParagraph").html(successText);
         };
         
-        var _onDeviceIsNotRegistered = function() {
-            $("#unregisterButton").hide();
+        var _onDeviceUnregistered = function() {
+            $("#messageParagraph").html("Device successfully unregistered.");
             $("#registerButton").show();
-            $("#messageParagraph").html(successText + "Device is not registered in Everlive. Tap the button below to register it.");
-        };
-        
-        var _onDeviceIsNotInitialized = function() {
             $("#unregisterButton").hide();
-            $("#initializeButton").show();
-            $("#messageParagraph").html("Device unregistered.<br /><br />Push token was invalidated and device was unregistered from Everlive. No push notifications will be received.");
         };
         
         var _onDeviceRegistrationUpdated = function() {
@@ -70,9 +64,7 @@ var app = (function () {
             alert('iOS notification received: ' + JSON.stringify(args)); 
         };
         
-        //Initializes the device for push notifications.
-        var enablePushNotifications = function () {
-            //Initialization settings
+        var registerInEverlive = function() {
             var pushSettings = {
                 android: {
                     senderID: androidProjectNumber
@@ -83,46 +75,13 @@ var app = (function () {
                     alert: "true"
                 },
                 notificationCallbackAndroid : onAndroidPushReceived,
-                notificationCallbackIOS: onIosPushReceived
-            }
+                notificationCallbackIOS: onIosPushReceived,
+                customParameters: {
+                    Age: 15
+                }
+            };
             
-            $("#initializeButton").hide();
-            $("#messageParagraph").text("Initializing push notifications...");
-            
-            var currentDevice = el.push.currentDevice(emulatorMode);
-            
-            currentDevice.enableNotifications(pushSettings)
-                .then(
-                    function(initResult) {
-                        $("#tokenLink").attr('href', 'mailto:test@example.com?subject=Push Token&body=' + initResult.token);
-                        $("#messageParagraph").html(successText + "Checking registration status...");
-                        
-                        return currentDevice.getRegistration();
-                    },
-                    function(err) {
-                        $("#messageParagraph").html("ERROR!<br /><br />An error occured while initializing the device for push notifications.<br/><br/>" + err.message);
-                    }
-                ).then(
-                    function(registration) {                        
-                        _onDeviceIsRegistered();                      
-                    },
-                    function(err) {                        
-                        if(err.code === 801) {
-                            _onDeviceIsNotRegistered();      
-                        }
-                        else {                        
-                            $("#messageParagraph").html("ERROR!<br /><br />An error occured while checking device registration status: <br/><br/>" + err.message);
-                        }
-                    }
-                );
-        };
-        
-        var registerInEverlive = function() {
-            var currentDevice = el.push.currentDevice();
-            
-            if (!currentDevice.pushToken) currentDevice.pushToken = "some token";
-            el.push.currentDevice()
-                .register({ Age: 15 })
+            el.push.register(pushSettings)
                 .then(
                     _onDeviceIsRegistered,
                     function(err) {
@@ -131,11 +90,10 @@ var app = (function () {
                 );
         };
         
-        var disablePushNotifications = function() {
-            el.push.currentDevice()
-                .disableNotifications()
+        var unregisterFromEverlive = function() {
+            el.push.unregister()
                 .then(
-                    _onDeviceIsNotInitialized,
+                    _onDeviceUnregistered,
                     function(err) {
                         alert('UNREGISTER ERROR: ' + JSON.stringify(err));
                     }
@@ -154,9 +112,8 @@ var app = (function () {
         };
         
         return {
-            enablePushNotifications: enablePushNotifications,
             registerInEverlive: registerInEverlive,
-            disablePushNotifications: disablePushNotifications,
+            unregisterFromEverlive: unregisterFromEverlive,
             updateRegistration: updateRegistration,
         };
     }());

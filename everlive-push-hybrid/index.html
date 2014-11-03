@@ -23,10 +23,9 @@
                 <a id="tokenLink" style="display: none;">send token</a>
             </p>
             <div data-role="footer" style="background: none;">
-                <a id="initializeButton" data-role="button" data-bind="events: { click: enablePushNotifications }" class="btn-big">Enable Notifications</a>
-                <a id="registerButton" style="display: none;" data-role="button" data-bind="events: { click: registerInEverlive }" class="btn-big">Register</a>
+                <a id="registerButton" data-role="button" data-bind="events: { click: registerInEverlive }" class="btn-big">Register for Push</a>
                 <a id="updateRegistrationButton" style="display: none;" data-role="button" data-bind="events: { click: updateRegistration }" class="btn-big">Update Registration</a>
-                <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: disablePushNotifications }" class="btn-big">Disable Notifications</a>
+                <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: unregisterFromEverlive }" class="btn-big">Unregister for Push</a>
             </div>
             <div data-role="footer">
                 <p>Powered by Icenium Everlive.</p>
@@ -34,12 +33,12 @@
         </div>
         
         <script src="cordova.js"></script>
-        <script src="Plugins/PushPlugin/PushNotification.js"></script>
         
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
         
         <script src="scripts/lib/reqwest.js"></script>
+        <script src="scripts/lib/jstz.js"></script>
         <script src="scripts/lib/rsvp.js"></script>
         <script src="scripts/lib/underscore.js"></script>
         <script src="scripts/lib/everlive.min.js"></script>
