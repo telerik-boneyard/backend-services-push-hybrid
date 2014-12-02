@@ -14,13 +14,10 @@
         <!--MAIN VIEW -->
         <div data-role="view" id="welcome" data-layout="default" class="welcome-scrn form-view" data-model="app.viewModels.main">
             <h1><b>Telerik Backend Services</b> sample application</h1>
-            <p id="messageParagraph" style="color: white; font-size: 16px;">
+            <p id="messageParagraph">
                 Welcome to the Telerik Backend Services push notifications sample hybrid app.<br />
                 <br />
                 Tap on the button below to enable push notifications on the device.
-            </p>
-            <p>
-                <a id="tokenLink" style="display: none;">send token</a>
             </p>
             <div data-role="footer" style="background: none;">
                 <a id="registerButton" data-role="button" data-bind="events: { click: registerForPush }" class="btn-big">Register for Push</a>

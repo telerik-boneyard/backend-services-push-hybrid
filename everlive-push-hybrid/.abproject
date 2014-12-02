@@ -1,7 +1,7 @@
 {
   "ProjectGuid": "9f5b4aad-2a66-44ce-8c28-3377a9371c1b",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "AppIdentifier": "com.telerik.everlivepushhybrid",
+  "AppIdentifier": "com.telerik.PushNotificationApp",
   "ProjectName": "everlive-push-hybrid",
   "AndroidPermissions": [
     "android.permission.ACCESS_COARSE_LOCATION",
@@ -73,8 +73,8 @@
     "org.apache.cordova.network-information",
     "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
-    "org.apache.cordova.vibration",
-    "com.phonegap.plugins.PushPlugin@2.4.3"
+    "com.phonegap.plugins.PushPlugin@2.4.3",
+    "org.apache.cordova.vibration"
   ],
   "WP8TileTitle": "",
   "WP8Publisher": "",
