@@ -45,7 +45,11 @@
       "IOS_APP_URL": ""
     }
   },
-  "WP8SupportedResolutions": [],
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
   "Description": "BS-push-hybrid",
   "Author": "",
   "WP8Requirements": [],
