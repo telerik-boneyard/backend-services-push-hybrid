@@ -1,5 +1,5 @@
 // This is your Telerik Backend Services API key.
-var bsApiKey = 'ILpA4u3eVMJjquco';
+var bsApiKey = 'BACKEND_SERVICES_API_KEY';
 
 // This is the scheme (http or https) to use for accessing the Telerik Backend Services REST API.
 var bsScheme = 'http';
@@ -29,11 +29,11 @@ var app = (function () {
     document.addEventListener("deviceready", onDeviceReady, false);
 
     // Initialize the Backend Services SDK
-     var el = new Everlive({
-         apiKey: bsApiKey,
-         scheme: bsScheme
-     });
-    
+    var el = new Everlive({
+        apiKey: bsApiKey,
+        scheme: bsScheme
+    });
+        
     new kendo.mobile.Application(document.body, { transition: 'slide', skin: 'flat' });
 
     var mainViewModel = (function () {
@@ -72,7 +72,7 @@ var app = (function () {
                     badge: "true",
                     sound: "true",
                     alert: "true"
-                }                ,
+                },
                 wp8:{
                     channelName:'EverlivePushChannel'
                 },
