@@ -73,7 +73,7 @@ var app = (function () {
                     sound: "true",
                     alert: "true"
                 },
-                wp8:{
+                wp8: {
                     channelName:'EverlivePushChannel'
                 },
                 notificationCallbackAndroid : onAndroidPushReceived,
