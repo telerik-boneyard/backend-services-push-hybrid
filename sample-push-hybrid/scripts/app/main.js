@@ -1,5 +1,5 @@
 //This is your Telerik BackEnd Services API key.
-var baasApiKey = 'BAAS_API_KEY';
+var baasApiKey = 'ILpA4u3eVMJjquco';
 
 //This is the scheme (http or https) to use for accessing Telerik BackEnd Services.
 var baasScheme = 'http';
@@ -70,7 +70,7 @@ var app = (function () {
         var registerForPush = function() {
             var pushSettings = {
                 android: {
-                    senderID: googleApiProjectNumber
+                    senderID: androidProjectNumber
                 },
                 iOS: {
                     badge: "true",
