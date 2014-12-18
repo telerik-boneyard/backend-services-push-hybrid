@@ -10,35 +10,30 @@
         <section data-role="layout" data-id="default">
             <!--View content will render here-->
         </section>
-        
         <!--MAIN VIEW -->
-        <div id="welcome" 
-             data-role="view" 
-             data-model="app.viewModels.main"
-             class="welcome-scrn form-view">
-            
-            <h1><b>Telerik BackEnd Services</b> sample application</h1>
-            <p id="messageParagraph">
-                Welcome to the Telerik BackEnd Services push notifications sample hybrid app.<br />
+        <div data-role="view" id="welcome" data-layout="default" class="welcome-scrn form-view" data-model="app.viewModels.main">
+            <h1>
+                <b>Telerik Backend Services</b> sample application
+            </h1>
+            <p id="messageParagraph" style="color: white; font-size: 16px;">
+                Welcome to the Telerik Backend Services push notifications sample hybrid app.<br />
                 <br />
                 Tap on the button below to enable push notifications on the device.
             </p>
-            <p><a id="tokenLink" style="display: none;">send token</a></p>
-            <div>
-                <a id="initializeButton" data-role="button" data-bind="events: { click: enablePushNotifications }" class="btn-big">Enable Notifications</a>
-                <a id="registerButton" style="display: none;" data-role="button" data-bind="events: { click: registerInEverlive }" class="btn-big">Register</a>
-                <a id="updateRegistrationButton" style="display: none;" data-role="button" data-bind="events: { click: updateRegistration }" class="btn-big">Update Registration</a>
-                <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: disablePushNotifications }" class="btn-big">Disable Notifications</a>
+            <div data-role="footer" style="background: none;">
+                <a id="registerButton" data-role="button" data-bind="events: { click: registerForPush }" class="btn-big">Register for Push</a>
+                <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: unregisterFromPush }" class="btn-big">Unregister from Push</a>
             </div>
             <div data-role="footer">
                 <p>Powered by Telerik AppBuilder.</p>
             </div>
         </div>
-        
         <script src="cordova.js"></script>
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
-        <script src="scripts/lib/everlive.all.js"></script>
+        
+        <script src="https://bs-static.cdn.telerik.com/latest/everlive.all.min.js"></script>
+        
         <script src="scripts/app/main.js" type="text/javascript"></script>
     </body>
 </html>
