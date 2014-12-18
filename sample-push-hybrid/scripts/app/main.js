@@ -23,7 +23,8 @@ var app = (function () {
         if (!baasApiKey || baasApiKey == 'BAAS_API_KEY') {
             $("#messageParagraph").html("Missing API key!<br /><br />It appears that you have not filled in your Telerik BackEnd Services API key.<br/><br/>Please go to scripts/app/main.js and enter your Telerik BackEnd Services API key at the beginning of the file.");
             $("#initializeButton").hide();
-        } else if ((!androidProjectNumber || androidProjectNumber == 'GOOGLE_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
+        }
+        else if ((!androidProjectNumber || androidProjectNumber == 'GOOGLE_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
             $("#messageParagraph").html("Missing Android Project Number!<br /><br />It appears that you have not filled in your Android project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Android project number at the beginning of the file.");
             $("#initializeButton").hide();
         }
@@ -38,135 +39,78 @@ var app = (function () {
         scheme: baasScheme
     });
 
-    var mobileApp = new kendo.mobile.Application(document.body, { transition: 'slide', layout: 'mobile-tabstrip' });
-
-    //Login view model
+    new kendo.mobile.Application(document.body, { transition: 'slide', skin: 'flat' });
     var mainViewModel = (function () {
-        
-        var successText = "SUCCESS!<br /><br />The device has been initialized for push notifications.<br /><br />";
+        var successText = "SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />";
         
         var _onDeviceIsRegistered = function() {
-            $("#initializeButton").hide();
             $("#registerButton").hide();
             $("#unregisterButton").show();
-            $("#messageParagraph").html(successText + "Device is registered in Telerik BackEnd Services and can receive push notifications.");
+            $("#messageParagraph").html(successText);
         };
         
-        var _onDeviceIsNotRegistered = function() {
-            $("#unregisterButton").hide();
+        var _onDeviceUnregistered = function() {
+            $("#messageParagraph").html("Device successfully unregistered.");
             $("#registerButton").show();
-            $("#messageParagraph").html(successText + "Device is not registered in Telerik BackEnd Services. Tap the button below to register it.");
-        };
-        
-        var _onDeviceIsNotInitialized = function() {
             $("#unregisterButton").hide();
-            $("#initializeButton").show();
-            $("#messageParagraph").html("Device unregistered.<br /><br />Push token was invalidated and device was unregistered from Telerik BackEnd Services. No push notifications will be received.");
-        };
-        
-        var _onDeviceRegistrationUpdated = function() {
-            $("#messageParagraph").html("Device registration updated.");
         };
         
         var onAndroidPushReceived = function(args) {
-            alert('Android notification received: ' + JSON.stringify(args)); 
+            alert('Android notification received: ' + JSON.stringify(args));
         };
         
         var onIosPushReceived = function(args) {
-            alert('iOS notification received: ' + JSON.stringify(args)); 
+            alert('iOS notification received: ' + JSON.stringify(args));
         };
         
-        //Initializes the device for push notifications.
-        var enablePushNotifications = function () {
-            //Initialization settings
+        var onWP8PushReceived = function (args) {
+            alert('Windows Phone notification received: ' + JSON.stringify(args));
+        };
+        
+        var registerForPush = function() {
             var pushSettings = {
                 android: {
-                    senderID: androidProjectNumber
+                    senderID: googleApiProjectNumber
                 },
                 iOS: {
                     badge: "true",
                     sound: "true",
                     alert: "true"
                 },
+                wp8: {
+                    channelName:'EverlivePushChannel'
+                },
                 notificationCallbackAndroid : onAndroidPushReceived,
-                notificationCallbackIOS: onIosPushReceived
-            }
-            
-            $("#initializeButton").hide();
-            $("#messageParagraph").text("Initializing push notifications...");
-            
-            var currentDevice = el.push.currentDevice(emulatorMode);
-            
-            currentDevice.enableNotifications(pushSettings)
-                .then(
-                    function(initResult) {
-                        $("#tokenLink").attr('href', 'mailto:test@example.com?subject=Push Token&body=' + initResult.token);
-                        $("#messageParagraph").html(successText + "Checking registration status...");
-                        return currentDevice.getRegistration();
-                    },
-                    function(err) {
-                        $("#messageParagraph").html("ERROR!<br /><br />An error occured while initializing the device for push notifications.<br/><br/>" + err.message);
-                    }
-                ).then(
-                    function(registration) {                        
-                        _onDeviceIsRegistered();                      
-                    },
-                    function(err) {                        
-                        if(err.code === 801) {
-                            _onDeviceIsNotRegistered();      
-                        }
-                        else {                        
-                            $("#messageParagraph").html("ERROR!<br /><br />An error occured while checking device registration status: <br/><br/>" + err.message);
-                        }
-                    }
-                );
-        };
-        
-        var registerInEverlive = function() {
-            var currentDevice = el.push.currentDevice();
-            
-            if (!currentDevice.pushToken) currentDevice.pushToken = "some token";
-            el.push.currentDevice()
-                .register({ Age: 15 })
+                notificationCallbackIOS: onIosPushReceived,
+                notificationCallbackWP8: onWP8PushReceived,
+                customParameters: {
+                    Age: 21
+                }
+            };
+            el.push.register(pushSettings)
                 .then(
                     _onDeviceIsRegistered,
                     function(err) {
                         alert('REGISTER ERROR: ' + JSON.stringify(err));
                     }
-                );
+                    );
         };
         
-        var disablePushNotifications = function() {
-            el.push.currentDevice()
-                .disableNotifications()
+        var unregisterFromPush = function() {
+            el.push.unregister()
                 .then(
-                    _onDeviceIsNotInitialized,
+                    _onDeviceUnregistered,
                     function(err) {
                         alert('UNREGISTER ERROR: ' + JSON.stringify(err));
                     }
-                );
-        };
-        
-        var updateRegistration = function() {
-            el.push.currentDevice()
-                .updateRegistration({ Age: 16 })
-                .then(
-                    _onDeviceRegistrationUpdated,
-                    function(err) {
-                        alert('UPDATE ERROR: ' + JSON.stringify(err));
-                    }
-                );
+                    );
         };
         
         return {
-            enablePushNotifications: enablePushNotifications,
-            registerInEverlive: registerInEverlive,
-            disablePushNotifications: disablePushNotifications,
-            updateRegistration: updateRegistration,
+            registerForPush: registerForPush,
+            unregisterFromPush: unregisterFromPush
         };
     }());
-    
-
     return {
         viewModels: {
             main: mainViewModel
