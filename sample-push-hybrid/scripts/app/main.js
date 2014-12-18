@@ -1,5 +1,5 @@
 //This is your Telerik BackEnd Services API key.
-var baasApiKey = 'ILpA4u3eVMJjquco';
+var baasApiKey = 'BAAS_API_KEY';
 
 //This is the scheme (http or https) to use for accessing Telerik BackEnd Services.
 var baasScheme = 'http';
@@ -40,6 +40,7 @@ var app = (function () {
     });
 
     new kendo.mobile.Application(document.body, { transition: 'slide', skin: 'flat' });
+    
     var mainViewModel = (function () {
         var successText = "SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />";
         
