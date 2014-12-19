@@ -1,7 +1,7 @@
-//This is your Telerik BackEnd Services API key.
+// This is your Telerik BackEnd Services API key.
 var baasApiKey = 'BAAS_API_KEY';
 
-//This is the scheme (http or https) to use for accessing Telerik BackEnd Services.
+// This is the scheme (http or https) to use for accessing Telerik BackEnd Services.
 var baasScheme = 'http';
 
 //This is your Android project number. It is required by Google in order to enable push notifications for your app. You do not need it for iPhone.
@@ -22,11 +22,11 @@ var app = (function () {
     var onDeviceReady = function() {
         if (!baasApiKey || baasApiKey == 'BAAS_API_KEY') {
             $("#messageParagraph").html("Missing API key!<br /><br />It appears that you have not filled in your Telerik BackEnd Services API key.<br/><br/>Please go to scripts/app/main.js and enter your Telerik BackEnd Services API key at the beginning of the file.");
-            $("#initializeButton").hide();
+            $("#registerButton").hide();
         }
         else if ((!androidProjectNumber || androidProjectNumber == 'GOOGLE_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
             $("#messageParagraph").html("Missing Android Project Number!<br /><br />It appears that you have not filled in your Android project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Android project number at the beginning of the file.");
-            $("#initializeButton").hide();
+            $("#registerButton").hide();
         }
         navigator.splashscreen.hide();
     };
