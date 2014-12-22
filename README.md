@@ -15,9 +15,9 @@ This application is a basic example of using Push Notifications provided by Tele
 3. Locate the `GOOGLE_PROJECT_NUMBER` string and replace its value with your Google Cloud Console project number. More details on obtaining the project number can be found [here](https://developers.google.com/console/help/#projectnumber).
 4. Locate the `BAAS_API_KEY` string and replace its value with the actual API Key of project in Telerik Backend Services. It can be found in the **API Keys** section.
 5. [Configure Push Notifications](http://docs.telerik.com/platform/backend-services/features/push-notifications/setup) in Telerik Backend Services.
-6. Deploy the project to a mobile device and run it. 
+6. Deploy the project to a mobile device and run it. Note that the app does not run in the AppBuilder Companion App for iOS.
 
-> The sample app does not run in the simulator or in the Telerik AppBuilder Companion App.
+> You cannot run the sample app in the AppBuilder simulator.
 
 # See Also
 
