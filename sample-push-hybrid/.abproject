@@ -3,7 +3,6 @@
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "AppIdentifier": "com.telerik.PushNotificationApp",
   "ProjectName": "sample-push-hybrid",
-  "IsRunnable": "true",
   "AndroidPermissions": [
     "android.permission.ACCESS_COARSE_LOCATION",
     "android.permission.ACCESS_FINE_LOCATION",
@@ -38,7 +37,6 @@
     "1",
     "2"
   ],
-  "iOSBackgroundMode": [],
   "AndroidVersionCode": "1",
   "FrameworkVersion": "3.5.0",
   "CorePlugins": [
@@ -60,8 +58,6 @@
   "projectVersion": "1",
   "WP8PublisherID": "{15da2ddb-6326-4e60-b258-d8b49ce3d0fd}",
   "WP8ProductID": "{6deca108-14fa-4ba9-8001-d32225ff55c4}",
-  "WP8Capabilities": [],
-  "WP8Requirements": [],
   "WP8Publisher": "",
   "WP8TileTitle": ""
 }
