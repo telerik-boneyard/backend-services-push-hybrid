@@ -39,6 +39,7 @@
 	"AndroidVersionCode": "1",
 	"FrameworkVersion": "3.7.0",
 	"CorePlugins": [
+		"com.phonegap.plugins.PushPlugin@2.5.5",
 		"org.apache.cordova.console",
 		"org.apache.cordova.device",
 		"org.apache.cordova.globalization",
