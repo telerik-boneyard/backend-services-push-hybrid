@@ -51,7 +51,7 @@
   "WP8ProductID": "{9f5b4aad-2a66-44ce-8c28-3377a9371c1b}",
   "WP8Capabilities": [],
   "CorePlugins": [
-    "com.phonegap.plugins.PushPlugin@2.4.3",
+    "com.phonegap.plugins.PushPlugin@2.5.5",
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
     "org.apache.cordova.console",
