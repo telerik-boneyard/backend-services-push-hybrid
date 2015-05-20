@@ -39,12 +39,7 @@
   ],
   "iOSBackgroundMode": [],
   "AndroidVersionCode": "1",
-  "DisplayName": "",
-  "CordovaPluginVariables": {
-    "com.telerik.mobiletesting": {
-      "IOS_APP_URL": ""
-    }
-  },
+  "DisplayName": "Sample Push Hybrid",
   "WP8SupportedResolutions": [
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
@@ -56,29 +51,33 @@
   "WP8ProductID": "{9f5b4aad-2a66-44ce-8c28-3377a9371c1b}",
   "WP8Capabilities": [],
   "CorePlugins": [
+    "com.phonegap.plugins.PushPlugin@2.4.3",
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
-    "org.apache.cordova.media-capture",
     "org.apache.cordova.console",
     "org.apache.cordova.contacts",
     "org.apache.cordova.device",
     "org.apache.cordova.device-motion",
     "org.apache.cordova.device-orientation",
+    "org.apache.cordova.dialogs",
     "org.apache.cordova.file",
     "org.apache.cordova.file-transfer",
     "org.apache.cordova.geolocation",
     "org.apache.cordova.globalization",
     "org.apache.cordova.inappbrowser",
     "org.apache.cordova.media",
+    "org.apache.cordova.media-capture",
     "org.apache.cordova.network-information",
-    "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
-    "com.phonegap.plugins.PushPlugin@2.4.3",
     "org.apache.cordova.vibration"
   ],
-  "WP8TileTitle": "",
+  "WP8TileTitle": "Push Sample",
   "WP8Publisher": "",
   "WP8PublisherID": "{e00e6268-8235-49db-9185-635259e38904}",
-  "FrameworkVersion": "3.5.0",
-  "Framework": "Cordova"
+  "FrameworkVersion": "3.7.0",
+  "Framework": "Cordova",
+  "projectVersion": "1",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8PackageIdentityName": "1234Telerik.com.telerik.PushNotificationApp",
+  "WPSdk": "8.0"
 }
