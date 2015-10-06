@@ -19,7 +19,7 @@ The sample app utilizes the following Telerik products and SDKs:
 
 ## Screenshots
 
-???Initial View|After Device is Registered
+Initial View|After Device is Registered
 ---|---
 ![Before Registering](https://raw.githubusercontent.com/telerik/backend-services-push-hybrid/master/screenshots/android-before-registering.png)|![After Registering](https://raw.githubusercontent.com/telerik/backend-services-push-hybrid/master/screenshots/android-after-registering.png)
 
