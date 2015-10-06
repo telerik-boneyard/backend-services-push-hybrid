@@ -15,7 +15,7 @@ The sample app utilizes the following Telerik products and SDKs:
 
 - [Telerik Backend Services](http://docs.telerik.com/platform/backend-services/)&mdash;this is the backend of Telerik Platform where you can store data, files, and user accounts as well as set up and send push notifications
 - [Telerik Backend Services JavaScript SDK](http://docs.telerik.com/platform/backend-services/javascript/getting-started-javascript-sdk)&mdash;to connect the app to Telerik Backend Services
-- Telerik Push Plugin for App Builder&mdash;to enable push notifications in Cordova
+- [Telerik Push Plugin](https://github.com/Telerik-Verified-Plugins/PushNotification) for AppBuilder&mdash;to enable push notifications in Cordova
 
 ## Screenshots
 
@@ -50,11 +50,13 @@ The sample app comes fully functional, but to see it in action you must link it 
 
 ## Running the Sample
 
-Once the app is configured, you can run it either on a real device or in the Telerik AppBuilder simulator.
+Once the app is configured, you can run it on a real device. To run it, follow the steps in the product's documentation: [Running Apps on Devices](http://docs.telerik.com/platform/appbuilder/testing-your-app/running-on-devices/working-with-devices).
 
-To run it, follow the steps in the product's documentation: [Running Apps on Devices](http://docs.telerik.com/platform/appbuilder/testing-your-app/running-on-devices/working-with-devices).
+> When running the app, ensure that you are building it as an app package as opposed to an AppBuilder companion app package.
 
-> Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
+> Push notifications are not supported when running the app on device simulators/emulators. 
+
+> Ensure that the device that you are using has Internet connectivity when running the sample.
 
 ## See Also
 
