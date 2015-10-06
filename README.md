@@ -1,3 +1,5 @@
+# Basic Push Notifications Sample App for PhoneGap/Cordova
+
 <a href="https://platform.telerik.com/#appbuilder/clone/https://github.com/telerik/backend-services-push-hybrid.git" target="_blank"><img src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/try-in-appbuilder.png" alt="Try in AppBuilder" title="Try in Telerik Platform" /></a><a href="https://github.com/telerik/backend-services-push-hybrid" target="_blank"><img style="padding-left:20px" src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/get-github.png" alt="Get from GitHub" title="Get from GitHub"></a>
 
 * [Overview](#overview)
@@ -23,7 +25,7 @@ Initial View|After Device is Registered
 ---|---
 ![Before Registering](https://raw.githubusercontent.com/telerik/backend-services-push-hybrid/master/screenshots/android-before-registering.png)|![After Registering](https://raw.githubusercontent.com/telerik/backend-services-push-hybrid/master/screenshots/android-after-registering.png)
 
-# Requirements
+## Requirements
 
 Before you begin, you need to ensure that you have the following:
 
