@@ -19,9 +19,9 @@ The sample app utilizes the following Telerik products and SDKs:
 
 ## Screenshots
 
-???Login Screen|Activity Stream|Activity Details
----|---|---
-![Login Screen](https://raw.githubusercontent.com/telerik/???/master/screenshots/ios-???.png)|![Activities stream view](https://raw.githubusercontent.com/telerik/???/master/screenshots/ios-???.png)|![Activity details view](https://raw.githubusercontent.com/telerik/???/master/screenshots/ios-???.png)
+???Initial View|After Device is Registered
+---|---
+![Before Registering](https://raw.githubusercontent.com/telerik/backend-services-push-hybrid/master/screenshots/android-before-registering.png)|![After Registering](https://raw.githubusercontent.com/telerik/backend-services-push-hybrid/master/screenshots/android-after-registering.png)
 
 # Requirements
 
@@ -45,7 +45,7 @@ The sample app comes fully functional, but to see it in action you must link it 
 6. Go back to the AppBuilder project.
 7. Open the `/scripts/app/main.js` file.
 8. Locate the `bsApiKey` variable and replace its value with the Backend Services API Key that you acquired earlier.
-9. If you want to run the app on Android devices, locate the `googleApiProjectNumber` variable and replace its value with your Google project number. More details on obtaining the project number can be found [here](https://developers.google.com/console/help/new/#projectnumber).
+9. If you want to run the app on Android devices, locate the `googleApiProjectNumber` variable and replace its value with your Google project number. More details on obtaining the project number can be found on [Google Developers](https://developers.google.com/console/help/new/#projectnumber).
 10. Finally, set up push notifications in your Backend Services project as explained in [Enabling Push Notifications](http://docs.telerik.com/platform/backend-services/javascript/push-notifications/push-enabling).
 
 ## Running the Sample
