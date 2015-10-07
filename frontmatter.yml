@@ -1,7 +1,7 @@
-title: Basic Push Hybrid
+title: Basic Push Cordova
 slug: sample-backend-services-push-hybrid
 position: 1
 publish: true
 page_title: Basic Push Notifications Sample App for PhoneGap/Cordova | Telerik Platform
 description: A simple Cordova/PhoneGap-based mobile app that has the single purpose of receiving push notifications sent from Telerik Platform.
-tags: Telerik, Sample App, Application, JavaScript, hybrid, iOS, Android, Windows Phone, push, notifications, BaaS
+tags: Telerik, Sample App, Application, JavaScript, hybrid, iOS, Android, Windows Phone, push, notifications, BaaS, Cordova, PhoneGap
