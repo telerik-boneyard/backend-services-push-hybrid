@@ -1,5 +1,5 @@
-// This is your Telerik Backend Services API key.
-var bsApiKey = 'BACKEND_SERVICES_API_KEY';
+// This is your Telerik Backend Services App ID.
+var appId = 'TELERIK_APP_ID';
 
 // This is the scheme (http or https) to use for accessing the Telerik Backend Services REST API.
 var bsScheme = 'http';
@@ -16,8 +16,8 @@ var app = (function () {
     }
     
     var onDeviceReady = function() {
-        if (!bsApiKey || bsApiKey === 'BACKEND_SERVICES_API_KEY') {
-            $("#messageParagraph").html("Missing API key!<br /><br />It appears that you have not filled in your Backend Services API key.<br/><br/>Please go to scripts/app/main.js and enter your Everlive API key at the beginning of the file.");
+        if (!appId || appId === 'TELERIK_APP_ID') {
+            $("#messageParagraph").html("Missing App ID!<br /><br />It appears that you have not filled in your Backend Services App ID.<br/><br/>Please go to scripts/app/main.js and enter your Telerik App ID at the beginning of the file.");
             $("#registerButton").hide();
         }
         else if ((!googleApiProjectNumber || googleApiProjectNumber === 'GOOGLE_API_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
@@ -30,7 +30,7 @@ var app = (function () {
 
     // Initialize the Backend Services SDK
     var el = new Everlive({
-        apiKey: bsApiKey,
+        appId: appId,
         scheme: bsScheme
     });
         

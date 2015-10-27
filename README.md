@@ -42,11 +42,11 @@ The sample app comes fully functional, but to see it in action you must link it 
 	An app called "My App" is created for you with an AppBuilder project set up.
 2. Click **My App** in the navigation bar at the top to go the app home.
 3. Create a Backend Services project. If you want to have sample data preloaded, select the **Start from the Friends app** option. Otherwise select the **Start from scratch** option.
-4. Once the Backend Services project is ready, go to **Overview > API Keys**.
-5. Take note of your API Key.
+4. Once the Backend Services project is ready, go to **Overview > AppID & Tokens**.
+5. Take note of your App ID.
 6. Go back to the AppBuilder project.
 7. Open the `/scripts/app/main.js` file.
-8. Locate the `bsApiKey` variable and replace its value with the Backend Services API Key that you acquired earlier.
+8. Locate the `appId` variable and replace its value with the Telerik App ID that you acquired earlier.
 9. If you want to run the app on Android devices, locate the `googleApiProjectNumber` variable and replace its value with your Google project number. More details on obtaining the project number can be found on [Google Developers](https://developers.google.com/console/help/new/#projectnumber).
 10. Finally, set up push notifications in your Backend Services project as explained in [Enabling Push Notifications](http://docs.telerik.com/platform/backend-services/javascript/push-notifications/push-enabling).
 
