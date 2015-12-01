@@ -42,7 +42,7 @@ The sample app comes fully functional, but to see it in action you must link it 
 	An app called "My App" is created for you with an AppBuilder project set up.
 2. Click **My App** in the navigation bar at the top to go the app home.
 3. Create a Backend Services project. If you want to have sample data preloaded, select the **Start from the Friends app** option. Otherwise select the **Start from scratch** option.
-4. Once the Backend Services project is ready, go to **Overview > AppID & Tokens**.
+4. Once the Backend Services project is ready, go to **AppID & Tokens**.
 5. Take note of your App ID.
 6. Go back to the AppBuilder project.
 7. Open the `/scripts/app/main.js` file.
