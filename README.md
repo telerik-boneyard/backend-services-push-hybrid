@@ -1,6 +1,6 @@
 # Basic Push Notifications Sample App for PhoneGap/Cordova
 
-<a href="https://platform.telerik.com/#appbuilder/clone/https://github.com/telerik/backend-services-push-hybrid.git" target="_blank"><img src="http://docs.telerik.com/platform/samples/images/try-in-appbuilder.png" alt="Try in AppBuilder" title="Try in Telerik Platform" /></a> <a href="https://github.com/telerik/backend-services-push-hybrid" target="_blank"><img style="padding-left:20px" src="http://docs.telerik.com/platform/samples/images/get-github.png" alt="Get from GitHub" title="Get from GitHub"></a>
+<a href="https://platform.telerik.com/#appbuilder/clone/https://github.com/telerik/backend-services-push-hybrid.git" target="_blank"><img src="http://docs.telerik.com/platform/samples/images/try-in-appbuilder.png" alt="Try in AppBuilder" title="Try in Telerik Platform" /></a>
 
 * [Overview](#overview)
 * [Screenshots](#screenshots)
@@ -15,8 +15,7 @@ This repository contains a basic sample app that can receive push notifications 
 
 The sample app utilizes the following Telerik products and SDKs:
 
-- [Telerik Backend Services](http://docs.telerik.com/platform/backend-services/)&mdash;this is the backend of Telerik Platform where you can store data, files, and user accounts as well as set up and send push notifications
-- [Telerik Backend Services JavaScript SDK](http://docs.telerik.com/platform/backend-services/javascript/getting-started-javascript-sdk)&mdash;to connect the app to Telerik Backend Services
+- [Telerik Backend Services JavaScript SDK](http://docs.telerik.com/platform/backend-services/javascript/getting-started-javascript-sdk)&mdash;to connect the app to Telerik Platform
 - [Telerik Push Plugin](https://github.com/Telerik-Verified-Plugins/PushNotification) for AppBuilder&mdash;to enable push notifications in Cordova
 
 ## Screenshots
@@ -36,19 +35,17 @@ The sample app requires Telerik AppBuilder to run. This can be the in-browser cl
 
 ## Configuration
 
-The sample app comes fully functional, but to see it in action you must link it to your own Telerik Platform account.
+The sample app comes fully functional, but to see it in action you must link it to a Telerik Platform app.
 
-1. Click the "Try in AppBuilder" button to clone the repository in AppBuilder.<br>
-	An app called "My App" is created for you with an AppBuilder project set up.
-2. Click **My App** in the navigation bar at the top to go the app home.
-3. Create a Backend Services project. If you want to have sample data preloaded, select the **Start from the Friends app** option. Otherwise select the **Start from scratch** option.
-4. Once the Backend Services project is ready, go to **AppID & Tokens**.
-5. Take note of your App ID.
-6. Go back to the AppBuilder project.
+1. Click the **Run in the Platform** button to clone the repository in Telerik Platform.<br>
+	A new Telerik Platform app is created for you. You can view the app source code on the Code tab.
+2. Click the **Settings** tab.
+5. Take note of your **App ID**.
+6. Go to the **Code** tab.
 7. Open the `/scripts/app/main.js` file.
-8. Locate the `appId` variable and replace its value with the Telerik App ID that you acquired earlier.
+8. Locate the `appId` variable and replace its value with the App ID that you acquired earlier.
 9. If you want to run the app on Android devices, locate the `googleApiProjectNumber` variable and replace its value with your Google project number. More details on obtaining the project number can be found on [Google Developers](https://developers.google.com/console/help/new/#projectnumber).
-10. Finally, set up push notifications in your Backend Services project as explained in [Enabling Push Notifications](http://docs.telerik.com/platform/backend-services/javascript/push-notifications/push-enabling).
+10. Finally, got to the **Notifications > Push Notifications** tab and set up push notifications as explained in [Enabling Push Notifications](http://docs.telerik.com/platform/backend-services/javascript/push-notifications/push-enabling).
 
 ## Running the Sample
 
