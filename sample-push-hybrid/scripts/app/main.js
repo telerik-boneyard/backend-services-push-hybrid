@@ -1,15 +1,11 @@
-// This is your Telerik Backend Services API key.
-var baasApiKey = 'BAAS_API_KEY';
+// This is your Telerik Backend Services App ID.
+var appId = 'TELERIK_APP_ID';
 
-// This is the scheme (http or https) to use for accessing Telerik Backend Services.
-var baasScheme = 'http';
+// This is the scheme (http or https) to use for accessing the Telerik Backend Services REST API.
+var bsScheme = 'http';
 
-//This is your Android project number. It is required by Google in order to enable push notifications for your app. You do not need it for iPhone.
-var androidProjectNumber = 'GOOGLE_PROJECT_NUMBER';
-
-//Set this to true in order to test push notifications in the emulator. Note, that you will not be able to actually receive 
-//push notifications because we will generate fake push tokens. But you will be able to test your other push-related functionality without getting errors.
-var emulatorMode = false;
+// This is your Google Cloud Console API project number. It is required by Google in order to enable push notifications for your Android. You do not need it for iOS.
+var googleApiProjectNumber = 'GOOGLE_API_PROJECT_NUMBER';
 
 var app = (function () {
     'use strict';
@@ -20,27 +16,26 @@ var app = (function () {
     }
     
     var onDeviceReady = function() {
-        if (!baasApiKey || baasApiKey == 'BAAS_API_KEY') {
-            $("#messageParagraph").html("Missing API key!<br /><br />It appears that you have not filled in your Telerik Backend Services API key.<br/><br/>Please go to scripts/app/main.js and enter your Telerik Backend Services API key at the beginning of the file.");
+        if (!appId || appId === 'TELERIK_APP_ID') {
+            $("#messageParagraph").html("Missing App ID!<br /><br />It appears that you have not filled in your Backend Services App ID.<br/><br/>Please go to scripts/app/main.js and enter your Telerik App ID at the beginning of the file.");
             $("#registerButton").hide();
         }
-        else if ((!androidProjectNumber || androidProjectNumber == 'GOOGLE_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
-            $("#messageParagraph").html("Missing Android Project Number!<br /><br />It appears that you have not filled in your Android project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Android project number at the beginning of the file.");
+        else if ((!googleApiProjectNumber || googleApiProjectNumber === 'GOOGLE_API_PROJECT_NUMBER') && device.platform.toLowerCase() == "android") {
+            $("#messageParagraph").html("Missing Google API Project Number!<br /><br />It appears that you have not filled in your Google API project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Google API project number at the beginning of the file.");
             $("#registerButton").hide();
         }
-        navigator.splashscreen.hide();
     };
 
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    //Initialize the Telerik Backend Services SDK
+    // Initialize the Backend Services SDK
     var el = new Everlive({
-        apiKey: baasApiKey,
-        scheme: baasScheme
+        appId: appId,
+        scheme: bsScheme
     });
-
+        
     new kendo.mobile.Application(document.body, { transition: 'slide', skin: 'flat' });
-    
+
     var mainViewModel = (function () {
         var successText = "SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />";
         
@@ -57,21 +52,21 @@ var app = (function () {
         };
         
         var onAndroidPushReceived = function(args) {
-            alert('Android notification received: ' + JSON.stringify(args));
+            alert('Android notification received: ' + JSON.stringify(args)); 
         };
         
         var onIosPushReceived = function(args) {
-            alert('iOS notification received: ' + JSON.stringify(args));
+            alert('iOS notification received: ' + JSON.stringify(args)); 
         };
         
         var onWP8PushReceived = function (args) {
-            alert('Windows Phone notification received: ' + JSON.stringify(args));
+            alert('Windows Phone notification received: ' + JSON.stringify(args)); 
         };
         
         var registerForPush = function() {
             var pushSettings = {
                 android: {
-                    senderID: androidProjectNumber
+                    senderID: googleApiProjectNumber
                 },
                 iOS: {
                     badge: "true",
@@ -88,6 +83,7 @@ var app = (function () {
                     Age: 21
                 }
             };
+            
             el.push.register(pushSettings)
                 .then(
                     _onDeviceIsRegistered,
@@ -112,6 +108,7 @@ var app = (function () {
             unregisterFromPush: unregisterFromPush
         };
     }());
+
     return {
         viewModels: {
             main: mainViewModel
