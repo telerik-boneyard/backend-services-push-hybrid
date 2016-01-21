@@ -2,33 +2,10 @@
 <html>
     <head>
         <title></title>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
 
-        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-        <link href="styles/main.css" rel="stylesheet" />
-    </head>
-    <body id="friendsApp">
-        <section data-role="layout" data-id="default">
-            <!--View content will render here-->
-        </section>
-        <!--MAIN VIEW -->
-        <div data-role="view" id="welcome" data-layout="default" class="welcome-scrn form-view" data-model="app.viewModels.main">
-            <h1>
-                <b>Telerik Platform push</b> sample application
-            </h1>
-            <p id="messageParagraph" style="color: white; font-size: 16px;">
-                Welcome to the Telerik Platform push notifications sample hybrid app.<br />
-                <br />
-                Tap on the button below to enable push notifications on the device.
-            </p>
-            <div data-role="footer" style="background: none;">
-                <a id="registerButton" data-role="button" data-bind="events: { click: registerForPush }" class="btn-big">Register for Push</a>
-                <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: unregisterFromPush }" class="btn-big">Unregister from Push</a>
-            </div>
-            <div data-role="footer">
-                <p>Powered by Telerik Platform.</p>
-            </div>
-        </div>
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
 
         <script src="cordova.js"></script>
 
@@ -36,7 +13,38 @@
         <script src="kendo/js/kendo.mobile.min.js"></script>
 
         <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+        
+        <script src="scripts/config.js"></script>
+        <script src="scripts/common.js"></script>
+        <script src="scripts/app.js"></script>
 
-        <script src="scripts/app/main.js" type="text/javascript"></script>
+        <script src="scripts/main.js"></script>
+    </head>
+    <body id="pushApp">
+        <div data-role="layout" data-id="default">
+            <!--View content will render here-->
+        </div>
+        <!--MAIN VIEW -->    
+        <div id="initView" data-role="view" data-layout="default" data-model="app.MainViewModel">
+            
+            <div data-role="header"></div>
+
+            <h1 class="app-logo hide-text center-block">Telerik</h1>
+            <h2 class="app-name center-text">Backend Services<small>Push Sample</small></h2>
+            
+            <p id="message">
+                Welcome to the Telerik Platform push notifications sample hybrid app.<br />
+                <br />
+                Tap on the button below to enable push notifications on the device.
+            </p>
+            
+            <div data-role="footer">
+                <a id="registerButton" data-role="button" data-bind="events: { click: registerForPush }" class="btn btn-action btn-large">Register for Push</a>
+                <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: unregisterFromPush }" class="btn btn-action btn-large">Unregister from Push</a>
+            </div>
+            <div data-role="footer">
+                <p>&copy; <span data-bind="text: getYear"></span> Telerik Inc.</p>
+            </div>
+        </div>
     </body>
 </html>
