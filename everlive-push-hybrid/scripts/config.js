@@ -1,20 +1,20 @@
 (function (global) {
     'use strict';
-
+    
     var app = global.app = global.app || {};
-
+    
     app.config = {
         everlive: {
-            appId: '$TELERIK_APP_ID$', // Put your Backend Services App ID here
+            appId: '1v3yd93kt88ccb1w', // Put your Backend Services App ID here
             scheme: 'http'
         },
         views: {
             init: '#initView'
         }
     };
-
-    app.androidProjectNumber = '$ANDROID_PROJECT_NUMBER$'; // Put your Google API project number here
-
+    
+    app.androidProjectNumber = '406987471724'; // Put your Google API project number here
+    
     app.constants = {
         NO_APP_ID_MESSAGE: '<h3>Telerik Platform <strong>App ID</strong> is not set.</h3><p><span>App ID</span> ' +
         'links the sample mobile app to a Telerik Platform app.</p><p>To set the <span>App ID</span> ' +
@@ -26,7 +26,7 @@
         'It is required for push notifications on Android.</p> ' +
         '<p>Please go to <span>/scripts/config.js</span> and replace <strong>$ANDROID_PROJECT_NUMBER$</strong> whit the ' +
         '<span>Google API project number</span> at the beginning of the file.</p>',
-
+        
         SUCCESS_TEXT: 'SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />',
         UNREGISTERED_TEXT: 'Device successfully unregistered.',
         EMULATOR_MODE: false
