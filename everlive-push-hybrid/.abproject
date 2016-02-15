@@ -30,7 +30,7 @@
     "Landscape"
   ],
   "iOSStatusBarStyle": "Default",
-  "AndroidHardwareAcceleration": "false",
+  "AndroidHardwareAcceleration": "true",
   "BundleVersion": "1.0",
   "iOSDisplayName": "",
   "iOSDeviceFamily": [
@@ -51,15 +51,16 @@
   "WP8ProductID": "{9f5b4aad-2a66-44ce-8c28-3377a9371c1b}",
   "WP8Capabilities": [],
   "CorePlugins": [
-    "com.phonegap.plugins.PushPlugin@3.0.2",
-    "org.apache.cordova.device",
-    "org.apache.cordova.globalization",
-    "org.apache.cordova.splashscreen"
+    "com.phonegap.plugins.PushPlugin@3.1.0",
+    "cordova-plugin-device",
+    "cordova-plugin-globalization",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-whitelist"
   ],
   "WP8TileTitle": "Push Sample",
   "WP8Publisher": "",
   "WP8PublisherID": "{e00e6268-8235-49db-9185-635259e38904}",
-  "FrameworkVersion": "3.7.0",
+  "FrameworkVersion": "4.0.0",
   "Framework": "Cordova",
   "projectVersion": "1",
   "WP8WindowsPublisherName": "CN=Telerik",
