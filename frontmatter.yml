@@ -7,4 +7,4 @@ description: A simple Cordova/PhoneGap-based mobile app that has the single purp
 tags: Telerik, Sample App, Application, JavaScript, hybrid, iOS, Android, Windows Phone, push notifications, BaaS, Cordova, PhoneGap
 apis: kendo.application
 related_resources:
-- "[Handling Push Notifications in a Hybrid or NativeScript App](http://docs.telerik.com/platform/backend-services/javascript/push-notifications/push-handle)"
+- "[Create from Sample](http://docs.telerik.com/platform/appbuilder/cordova/creating-your-app/clone-from-sample)"
