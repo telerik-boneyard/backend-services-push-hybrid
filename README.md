@@ -8,7 +8,7 @@
 * [Requirements](#requirements)
 * [Configuration](#configuration)
 * [Running the Sample](#running-the-sample)
-* [See Also](#see-also)
+
 
 # Overview
 
@@ -58,6 +58,3 @@ Once the app is configured, you can run it on a real device. To run it, follow t
 
 > Ensure that the device that you are using has Internet connectivity when running the sample.
 
-# See Also
-
-[Getting Started with Push Notifications](http://docs.telerik.com/platform/backend-services/javascript/push-notifications/push-getting-started)
