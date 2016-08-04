@@ -27,6 +27,11 @@
         '<p>Please go to <span>/scripts/config.js</span> and replace <strong>$ANDROID_PROJECT_NUMBER$</strong> whit the ' +
         '<span>Google API project number</span> at the beginning of the file.</p>',
 
+        WRONG_GOOGLE_API_PROJECT_NUMBER: '<h3>Wrong Google API Project Number!</h3> ' +
+        '<p>It appears that you have filled in wrong Google API project number. ' +
+        'The required project number consist only from digits, 12 in length.</p> ' +
+        '<p>Please go to <span>/scripts/config.js</span> and place a valid project number.</p>',
+
         SUCCESS_TEXT: 'SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />',
         UNREGISTERED_TEXT: 'Device successfully unregistered.',
         EMULATOR_MODE: false
