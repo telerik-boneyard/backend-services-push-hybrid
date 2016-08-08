@@ -33,9 +33,9 @@
     };
 
     app.isInCompanionAppCheck = function() {
-        try {
+        if (typeof(isInCompanionApp) !== 'undefined') {
             return isInCompanionApp === true;
-        } catch (err) {
+        } else {
             return false;
         }
     };
