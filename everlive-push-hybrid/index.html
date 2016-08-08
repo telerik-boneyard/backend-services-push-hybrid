@@ -13,7 +13,7 @@
         <script src="kendo/js/kendo.mobile.min.js"></script>
 
         <script src="bower_components/everlive/min/everlive.all.min.js"></script>
-        
+
         <script src="scripts/config.js"></script>
         <script src="scripts/common.js"></script>
         <script src="scripts/app.js"></script>
@@ -24,20 +24,21 @@
         <div data-role="layout" data-id="default">
             <!--View content will render here-->
         </div>
-        <!--MAIN VIEW -->    
+        <!--MAIN VIEW -->
         <div id="initView" data-role="view" data-layout="default" data-model="app.MainViewModel">
-            
+
             <div data-role="header"></div>
 
             <h1 class="app-logo hide-text center-block">Telerik</h1>
             <h2 class="app-name center-text">Backend Services<small>Push Sample</small></h2>
-            
+
             <p id="message">
                 Welcome to the Telerik Platform push notifications sample hybrid app.<br />
                 <br />
                 Tap on the button below to enable push notifications on the device.
             </p>
-            
+            <p id="warning"></p>
+
             <div data-role="footer">
                 <a id="registerButton" data-role="button" data-bind="events: { click: registerForPush }" class="btn btn-action btn-large">Register for Push</a>
                 <a id="unregisterButton" style="display: none;" data-role="button" data-bind="events: { click: unregisterFromPush }" class="btn btn-action btn-large">Unregister from Push</a>

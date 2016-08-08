@@ -1,4 +1,4 @@
-(function (global) {
+(function(global) {
     'use strict';
 
     var app = global.app = global.app || {};
@@ -17,22 +17,29 @@
 
     app.constants = {
         NO_APP_ID_MESSAGE: '<h3>Telerik Platform <strong>App ID</strong> is not set.</h3><p><span>App ID</span> ' +
-        'links the sample mobile app to a Telerik Platform app.</p><p>To set the <span>App ID</span> ' +
-        'open the <span>/scripts/config.js</span> file and replace <strong>$TELERIK_APP_ID$</strong> with the ' +
-        '<span>App ID</span> of your Telerik app.</p>',
+            'links the sample mobile app to a Telerik Platform app.</p><p>To set the <span>App ID</span> ' +
+            'open the <span>/scripts/config.js</span> file and replace <strong>$TELERIK_APP_ID$</strong> with the ' +
+            '<span>App ID</span> of your Telerik app.</p>',
 
         NO_GOOGLE_API_PROJECT_NUMBER: '<h3>Missing Google API Project Number!</h3> ' +
-        '<p>It appears that you have not filled in your Google API project number. ' +
-        'It is required for push notifications on Android.</p> ' +
-        '<p>Please go to <span>/scripts/config.js</span> and replace <strong>$ANDROID_PROJECT_NUMBER$</strong> whit the ' +
-        '<span>Google API project number</span> at the beginning of the file.</p>',
+            '<p>It appears that you have not filled in your Google API project number. ' +
+            'It is required for push notifications on Android.</p> ' +
+            '<p>Please go to <span>/scripts/config.js</span> and replace <strong>$ANDROID_PROJECT_NUMBER$</strong> whit the ' +
+            '<span>Google API project number</span> at the beginning of the file.</p>',
 
         WRONG_GOOGLE_API_PROJECT_NUMBER: '<h3>Wrong Google API Project Number!</h3> ' +
-        '<p>It appears that you have filled in wrong Google API project number. ' +
-        'The required project number consist only from digits, 12 in length.</p> ' +
-        '<p>Please go to <span>/scripts/config.js</span> and place a valid project number.</p>',
+            '<p>It appears that you have filled in wrong Google API project number. ' +
+            'The required project number consist only from digits, 12 in length.</p> ' +
+            '<p>Please go to <span>/scripts/config.js</span> and place a valid project number.</p>',
 
-        SUCCESS_TEXT: 'SUCCESS!<br /><br />The device has been registered for push notifications.<br /><br />',
+        IN_SIMULATOR_TEXT: '<br /><br />RUNNING IN SIMULATOR!<br />Push notifications are NOT SUPPORTED when running the app on device simulator.',
+
+        IN_COMPANION_APP_TEXT: '<br /><br />RUNNING IN COMPANION APP!<br /><br />' +
+            'Push notifications are NOT SUPPORTED when running the app in Telerik Platform Companion app.<br /><br /> ' +
+            'Please build the app as a stand-alone app package!',
+
+
+        SUCCESS_TEXT: 'SUCCESS!<br />The device has been registered for push notifications.<br /><br />',
         UNREGISTERED_TEXT: 'Device successfully unregistered.',
         EMULATOR_MODE: false
     };
