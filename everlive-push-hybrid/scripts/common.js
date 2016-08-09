@@ -3,14 +3,6 @@
 
     var app = global.app = global.app || {};
 
-    app.showAlert = function(message, title, callback) {
-        navigator.notification.alert(message, callback || function() {}, title, 'OK');
-    };
-
-    app.showError = function(message) {
-        app.showAlert(message, 'Error occured');
-    };
-
     app.showLoading = function() {
         app.mobile.showLoading();
     };
