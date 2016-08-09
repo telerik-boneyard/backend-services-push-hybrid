@@ -32,15 +32,14 @@
             'The required project number consist only from digits, 12 in length.</p> ' +
             '<p>Please go to <span>/scripts/config.js</span> and place a valid project number.</p>',
 
-        IN_SIMULATOR_TEXT: '<br /><br />RUNNING IN SIMULATOR!<br />Push notifications are NOT SUPPORTED when running the app on device simulator.',
+        IN_SIMULATOR_TEXT: '<br /><br />RUNNING IN SIMULATOR!<br />Push notifications are NOT SUPPORTED when running the app on device simulator. You can only test the device registration workflow.',
 
         IN_COMPANION_APP_TEXT: '<br /><br />RUNNING IN COMPANION APP!<br /><br />' +
             'Push notifications are NOT SUPPORTED when running the app in Telerik Platform Companion app.<br /><br /> ' +
             'Please build the app as a stand-alone app package!',
 
-
         SUCCESS_TEXT: 'SUCCESS!<br />The device has been registered for push notifications.<br /><br />',
-        UNREGISTERED_TEXT: 'Device successfully unregistered.',
-        EMULATOR_MODE: false
+
+        UNREGISTERED_TEXT: 'Device successfully unregistered.'
     };
 }(window));

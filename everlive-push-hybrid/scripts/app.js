@@ -8,15 +8,6 @@
         scheme: app.config.everlive.scheme
     });
 
-    var fixViewResize = function() {
-
-        if (device.platform === 'iOS') {
-            setTimeout(function() {
-                $(document.body).height(window.innerHeight);
-            }, 10);
-        }
-    };
-
     var onDeviceReady = function() {
 
         navigator.splashscreen.hide();
@@ -45,19 +36,11 @@
             $('#warning').html(app.constants.IN_SIMULATOR_TEXT);
         }
 
-        fixViewResize();
-
-        var os = kendo.support.mobileOS,
-            statusBarStyle = os.ios && os.flatVersion >= 700 ? 'black-translucent' : 'black';
-
         app.mobile = new kendo.mobile.Application(document.body, {
             transition: 'slide',
-            statusBarStyle: statusBarStyle,
             skin: 'flat'
         });
     };
 
     document.addEventListener('deviceready', onDeviceReady, false);
-    document.addEventListener('orientationchange', fixViewResize);
-
 }(window));
