@@ -32,7 +32,6 @@
   "iOSStatusBarStyle": "Default",
   "AndroidHardwareAcceleration": "true",
   "BundleVersion": "1.0",
-  "iOSDisplayName": "",
   "iOSDeviceFamily": [
     "1",
     "2"
@@ -51,7 +50,7 @@
   "WP8ProductID": "{9f5b4aad-2a66-44ce-8c28-3377a9371c1b}",
   "WP8Capabilities": [],
   "CorePlugins": [
-    "com.phonegap.plugins.PushPlugin@3.1.0",
+    "com.phonegap.plugins.PushPlugin@3.2.0",
     "cordova-plugin-device",
     "cordova-plugin-globalization",
     "cordova-plugin-splashscreen",

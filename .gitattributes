@@ -1,0 +1,37 @@
+# By default let Git auto detect text files and perform LF normalization
+#* text=auto
+
+# Visual Studio related
+*.cs      text diff=csharp
+*.csproj  text
+*.sln     text
+*.xaml    text
+*.msbuild text
+*.manifest text
+*.vsct    text
+*.targets text
+*.aspx    text
+*.asax    text
+*.resx    text
+
+# Web
+*.html    text diff=html
+*.htm     text diff=html
+*.js      text
+*.json    text
+*.css     text
+
+# Others
+*.md      text
+*.xml     text
+*.txt     text
+*.config  text
+
+# Windows only
+*.ps1     text eol=crlf
+*.cmd     text eol=crlf
+
+# Unix only
+*.sh      text eol=lf
+*.bash    text eol=lf
+*.conf	  text eol=lf
