@@ -35,15 +35,8 @@
     app.isProjectNumberValid = function(value) {
         var regEx = /^\d+$/;
         var isOnlyDigits = regEx.test(value);
-        var isValidLength;
 
-        if (value.length === 12) {
-            isValidLength = true;
-        } else {
-            isValidLength = false;
-        }
-
-        return isOnlyDigits && isValidLength;
+        return isOnlyDigits;
     };
 
     app.getYear = function() {
