@@ -29,7 +29,7 @@
 
         WRONG_GOOGLE_API_PROJECT_NUMBER: '<h3>Wrong Google API Project Number!</h3> ' +
             '<p>It appears that you have filled in wrong Google API project number. ' +
-            'The required project number consist only from digits, 12 in length.</p> ' +
+            'The required project number consists only from digits.</p> ' +
             '<p>Please go to <span>/scripts/config.js</span> and place a valid project number.</p>',
 
         IN_SIMULATOR_TEXT: '<div>To be able to receive push notifications, build the app as an app package and deploy it to a device. ' +
